@@ -289,7 +289,7 @@ function M.setup(config)
     GitSignsDelete = { fg = c.gitSigns.delete }, -- diff mode: Deleted line |diff.txt|
 
     -- Telescope
-    TelescopeBorder = { fg = c.border_highlight },
+    TelescopeBorder = { fg = c.bg },
     TelescopePromptBorder = { fg = c.prompt_border },
     TelescopeResultsBorder = { fg = c.bg_highlight },
     TelescopeSelectionCaret = { fg = c.purple },
