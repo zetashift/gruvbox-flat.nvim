@@ -131,8 +131,6 @@ function M.setup(config)
     qfLineNr = { fg = c.dark5 },
     qfFileName = { fg = c.blue },
 
-    htmlTag = { fg = c.purple, style = "bold" },
-
     -- mkdHeading = { fg = c.orange, style = "bold" },
     -- mkdCode = { bg = c.bg2, fg = c.fg },
     mkdCodeDelimiter = { bg = c.bg2, fg = c.fg },
@@ -200,7 +198,7 @@ function M.setup(config)
     TSWarning = { fg = c.bg, bg = c.warning },
     TSDanger = { fg = c.bg, bg = c.error },
     TSConstructor = { fg = c.aqua }, -- For constructor calls and definitions: `= { }` in Lua, and Java constructors.
-    -- TSConditional       = { };    -- For keywords related to conditionnals.
+    TSConditional = { fg = c.red };    -- For keywords related to conditionnals.
     TSConstant = { fg = c.yellow }, -- For constants
     -- TSConstBuiltin      = { };    -- For constant that are built in the language: `nil` in Lua.
     -- TSConstMacro        = { };    -- For constants that are defined by macros: `NULL` in C.
@@ -211,18 +209,18 @@ function M.setup(config)
     -- TSFunction          = { };    -- For function (calls and definitions).
     -- TSFuncBuiltin       = { };    -- For builtin functions: `table.insert` in Lua.
     -- TSFuncMacro         = { };    -- For macro defined fuctions (calls and definitions): each `macro_rules` in Rust.
-    TSInclude = { fg = c.blue }, -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
-    TSKeyword = { fg = c.purple, style = config.keywordStyle }, -- For keywords that don't fall in previous categories.
-    TSKeywordFunction = { fg = c.purple, style = config.functionStyle }, -- For keywords used to define a fuction.
+    TSInclude = { fg = c.purple }, -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
+    TSKeyword = { fg = c.red, style = config.keywordStyle }, -- For keywords that don't fall in previous categories.
+    TSKeywordFunction = { fg = c.red, style = config.functionStyle }, -- For keywords used to define a fuction.
     TSLabel = { fg = c.blue }, -- For labels: `label:` in C and `:label:` in Lua.
     -- TSMethod            = { };    -- For method calls and definitions.
     TSNamespace = { fg = c.red }, -- For identifiers referring to modules and namespaces.
     -- TSNone              = { };    -- TODO: docs
     -- TSNumber            = { };    -- For all numbers
     TSOperator = {fg = util.darken(c.orange, 0.85) }, -- For any operator: `+`, but also `->` and `*` in C.
-    TSParameter = { fg = c.red }, -- For parameters of a function.
+    TSParameter = { fg = c.fg }, -- For parameters of a function.
     -- TSParameterReference= { };    -- For references to parameters of a function.
-    TSProperty = { fg = c.red }, -- Same as `TSField`.
+    TSProperty = { fg = c.blue }, -- Same as `TSField`.
     TSPunctDelimiter = { fg = c.red }, -- For delimiters ie: `.`
     TSPunctBracket = { fg = util.darken(c.orange, 0.85) }, -- For brackets and parens.
     TSPunctSpecial = { fg = util.darken(c.orange, 0.85) }, -- For special punctutation that does not fall in the catagories before.
@@ -236,7 +234,7 @@ function M.setup(config)
     TSVariable = { style = config.variableStyle }, -- Any variable name that does not have another highlight.
     TSVariableBuiltin = { fg = c.aqua }, -- Variable names that are defined by the languages, like `this` or `self`.
 
-    TSTag = { fg = c.red }, -- Tags like html tag names.
+    TSTag = { fg = c.orange }, -- Tags like html tag names.
     -- TSTagDelimiter      = { };    -- Tag delimiter like `<` `>` `/`
     -- TSText              = { };    -- For strings considered text in a markup language.
     TSTextReference = { fg = c.red }, -- FIXME
@@ -249,6 +247,16 @@ function M.setup(config)
 
     -- Lua
     -- luaTSProperty = { fg = c.red }, -- Same as `TSField`.
+		
+		-- HTML
+		htmlTag = { fg = c.orange, style = "bold" },
+		htmlTSTagAttribute = { fg = c.yellow },
+
+		-- CSS
+		cssTSProperty = { fg = c.blue },
+
+		-- Vue
+		vueTSTagAttribute = { fg = c.yellow },
 
     -- LspTrouble
     LspTroubleText = { fg = c.fg_dark },
